@@ -11,7 +11,7 @@ export default class Bot extends EventEmitter {
     * @param {string} prefix The bot's prefix, default is a `@` mention of the bot's username
     * @returns {void}
     */
-    login(username, password, server="wss://server.meower.org/", prefix=`@${username}`) {
+    login(username, password, server="wss://server.streamilator.tk/", prefix=`@${username}`) {
         this.username = username;
         this.password = password;
         this.prefix = prefix;
@@ -30,7 +30,7 @@ export default class Bot extends EventEmitter {
                 "cmd": "direct",
                 "val": {
                     "cmd": "ip",
-                    "val": await fetch("https://api.meower.org/ip").then(res => res.text())
+                    "val": await fetch("https://api.streamilator.tk/ip").then(res => res.text())
                 }
             });
 
@@ -240,7 +240,7 @@ export class API {
     /**
     * @param {string} url The URL of the API to use
     */
-    constructor(url="https://api.meower.org/") {
+    constructor(url="https://api.streamilator.tk/") {
         this.url = url;
     }
 
